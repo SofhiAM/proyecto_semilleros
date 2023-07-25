@@ -13,7 +13,10 @@ use App\Http\Livewire\Tables;
 use App\Http\Livewire\StaticSignIn;
 use App\Http\Livewire\StaticSignUp;
 use App\Http\Livewire\Rtl;
-use App\Http\Livewire\SemilleroCon;
+use App\Http\Semilleros\SemilleroCon;
+use App\Http\Semilleros\MiSemilleroCon;
+use App\Http\Semilleros\EncabezadoSemCon;
+use App\Http\Semilleros\SemilleristasCon;
 
 use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
@@ -45,8 +48,14 @@ Route::get('/reset-password/{id}',ResetPassword::class)->name('reset-password')-
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
     Route::get('/billing', Billing::class)->name('billing');
-    Route::get('/semillero', SemilleroCon::class)->name('semillero');
     Route::get('/profile', Profile::class)->name('profile');
+
+    Route::get('/semillero', SemilleroCon::class)->name('semillero');
+    Route::get('/encabezadoSem/{id}', EncabezadoSemCon::class)->name('encabezadoSem');
+    Route::get('/miSemillero', MiSemilleroCon::class)->name('miSemillero');
+    Route::get('/misSemilleristas', SemilleristasCon::class)->name('semilleristas');
+    // Route::put('/semilleristas/{id}', [MiSemilleroCon::class, 'editar'])->name('miSemillero');
+    
     Route::get('/tables', Tables::class)->name('tables');
     Route::get('/static-sign-in', StaticSignIn::class)->name('sign-in');
     Route::get('/static-sign-up', StaticSignUp::class)->name('static-sign-up');

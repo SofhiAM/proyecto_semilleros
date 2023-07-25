@@ -34,6 +34,6 @@ class SemilleroSeeder extends Seeder
                 'id_coordinador'=>2190,
             ]
         ];
-        DB::table('semillero')->insert($datos);
+        
     }   
 }
