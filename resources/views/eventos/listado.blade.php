@@ -1,5 +1,5 @@
 <x-layouts.app>
-    <div class="container-fluid py-4">    
+    <div class="container-fluid py-2">    
         <div class="row">
             <div class="col-md-12 mb-lg-0 mb-4">
                 <div class="card mt-4">
@@ -9,7 +9,7 @@
                         <h4 class="mb-0">Listado de Eventos</h4>
                     </div>
                     <div class="col-6 text-end">
-                        <a class="btn bg-gradient-dark mb-0" href="javascript:;"><i class="fas fa-plus"></i>&nbsp;&nbsp;Añadir Evento</a>
+                        <a class="btn bg-gradient-dark mb-0" href='/registro-eventos'><i class="fas fa-plus"></i>&nbsp;&nbsp;Añadir Evento</a>
                     </div>
                     </div>
                 </div>
