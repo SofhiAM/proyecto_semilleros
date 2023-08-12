@@ -19,6 +19,7 @@ use App\Http\Livewire\LaravelExamples\UserManagement;
 
 use Illuminate\Http\Request;
 
+use App\Http\Controllers\Eventos;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,6 +45,7 @@ Route::get('/reset-password/{id}',ResetPassword::class)->name('reset-password')-
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
     Route::get('/billing', Billing::class)->name('billing');
+    Route::get('/ver-eventos', 'App\Http\Controllers\Eventos@index')->name('ver-eventos');
     Route::get('/profile', Profile::class)->name('profile');
     Route::get('/tables', Tables::class)->name('tables');
     Route::get('/static-sign-in', StaticSignIn::class)->name('sign-in');
