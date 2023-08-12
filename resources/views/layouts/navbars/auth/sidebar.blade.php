@@ -152,13 +152,14 @@
                     href="{{ route('ver-eventos') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                            <title>settings</title>
+                        <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <title>calendar</title>
                             <g id="Basic-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <g id="Rounded-Icons" transform="translate(-2020.000000, -442.000000)" fill="#FFFFFF"
                                     fill-rule="nonzero">
                                     <g id="Icons-with-opacity" transform="translate(1716.000000, 291.000000)">
-                                        <g id="settings" transform="translate(304.000000, 151.000000)">
+                                        <g id="calendar" transform="translate(304.000000, 151.000000)">
                                             <polygon class="color-background" id="Path" opacity="0.596981957"
                                                 points="18.0883333 15.7316667 11.1783333 8.82166667 13.3333333 6.66666667 6.66666667 0 0 6.66666667 6.66666667 13.3333333 8.82166667 11.1783333 15.315 17.6716667">
                                             </polygon>
