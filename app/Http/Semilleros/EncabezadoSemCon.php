@@ -9,12 +9,12 @@ use App\Models\SemilleroMod;
 
 class EncabezadoSemCon extends Component
 {
-    public function render()
+    public function render($id)
     {
-        // $semillero = DB::table('semillero')->get();
+        $semillero = SemilleroMod::findOrFail($id);
         // $id_coor = DB::table('semillero')->value('id_coordinador');
         // $coordinador = DB::table('coordinador')->where('id_coordinador',$id_coor)->value('nom_coordinador');
-        return view('Semilleros.misemillero');
+        return view('Semilleros.encabezadoSem',['semillero'=>$semillero]);
     }
 
 }

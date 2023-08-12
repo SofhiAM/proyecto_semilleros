@@ -52,7 +52,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/semillero', SemilleroCon::class)->name('semillero');
     Route::get('/encabezadoSem/{id}', EncabezadoSemCon::class)->name('encabezadoSem');
-    Route::get('/miSemillero', MiSemilleroCon::class)->name('miSemillero');
+    Route::get('/miSemillero/{id}', MiSemilleroCon::class)->name('miSemillero');
     Route::get('/misSemilleristas', SemilleristasCon::class)->name('semilleristas');
     // Route::put('/semilleristas/{id}', [MiSemilleroCon::class, 'editar'])->name('miSemillero');
     
