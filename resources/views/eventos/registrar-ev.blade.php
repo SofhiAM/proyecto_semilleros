@@ -9,7 +9,13 @@
             <form action="{{url('/eventos/registrar')}}" method="post">
                 @csrf
                 <div class="row">
-                    <div class="col-sm-12 col-md-12">
+                    <div class="col-sm-12 col-md-4">
+                        <div class="form-group">
+                            <label class="form-control-label" style="font-size: 14px;">Id del evento</label>
+                            <input type="text" class="form-control"  placeholder="1000" id="id_evento" name="id_evento" require>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-8">
                         <div class="form-group">
                             <label class="form-control-label" style="font-size: 14px;">Nombre del evento</label>
                             <input type="text" class="form-control"  placeholder="Evento" id="nom_evento" name="nom_evento" require>
