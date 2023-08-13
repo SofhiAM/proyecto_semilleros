@@ -43,6 +43,11 @@
                         Sign In
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark me-2">
+                        <i class="fas fa-coins opacity-6 text-dark me-1"></i>
+                        PEUBA PARA QUITAR EL MENU SUPERIOR
+                    </a>
             </ul>
             <ul class="navbar-nav d-lg-block d-none">
                 <li class="nav-item">
