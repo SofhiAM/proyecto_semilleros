@@ -21,6 +21,7 @@ use App\Http\Semilleros\SemilleristasCon;
 
 use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
+use App\Http\Livewire\LaravelExamples\UserEdit;
 
 use Illuminate\Http\Request;
 
@@ -72,5 +73,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/rtl', Rtl::class)->name('rtl');
     Route::get('/laravel-user-profile', UserProfile::class)->name('user-profile');
     Route::get('/laravel-user-management', UserManagement::class)->name('user-management');
+    Route::get('/laravel-user-edit/{userId}', UserEdit::class)->name('user-edit');
 });
 
