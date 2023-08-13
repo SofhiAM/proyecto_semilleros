@@ -2,12 +2,12 @@
 
 namespace App\Http\Semilleros;
 
-use Livewire\Component;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\SemilleroMod;
 
-class MiSemilleroCon extends Component
+class MiSemilleroCon extends Controller
 {
     public function render($id)
     {

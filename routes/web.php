@@ -14,6 +14,7 @@ use App\Http\Livewire\StaticSignIn;
 use App\Http\Livewire\StaticSignUp;
 use App\Http\Livewire\Rtl;
 use App\Http\Semilleros\SemilleroCon;
+use App\Http\Semilleros\RegistroCon;
 use App\Http\Semilleros\MiSemilleroCon;
 use App\Http\Semilleros\EncabezadoSemCon;
 use App\Http\Semilleros\SemilleristasCon;
@@ -50,10 +51,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/billing', Billing::class)->name('billing');
     Route::get('/profile', Profile::class)->name('profile');
 
-    Route::get('/semillero', SemilleroCon::class)->name('semillero');
-    Route::get('/encabezadoSem/{id}', EncabezadoSemCon::class)->name('encabezadoSem');
-    Route::get('/miSemillero/{id}', MiSemilleroCon::class)->name('miSemillero');
-    Route::get('/misSemilleristas', SemilleristasCon::class)->name('semilleristas');
+    Route::get('/semillero', [SemilleroCon::class, 'render'])->name('semillero');
+    Route::get('/miSemillero/{id}', [MiSemilleroCon::class,'render'])->name('miSemillero');
+    Route::get('/semilleristas/{id}', [SemilleristasCon::class,'render'])->name('semilleristas');
+    Route::get('/registrarsemillero', RegistroCon::class)->name('registroSem');
+    Route::post('/registrarsemillero',[RegistroCon::class, 'registrar']);
+    Route::get('/semillero/eliminar{id}',[SemilleroCon::class, 'eliminar'])->name('eliminaSem');
     // Route::put('/semilleristas/{id}', [MiSemilleroCon::class, 'editar'])->name('miSemillero');
     
     Route::get('/tables', Tables::class)->name('tables');
