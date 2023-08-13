@@ -13,7 +13,7 @@
         @if (in_array(request()->route()->getName(),['static-sign-up', 'sign-up'],))
             @if ($tipoUsuario === 'user')
                 @include('layouts.navbars.guest.sign-up')
-            @elseif ($tipoUsuario === 'admin')
+            @elseif ($tipoUsuario === 'cor' || $tipoUsuario === 'dir')
                 @include('layouts.navbars.guest.sign-up')
             @endif    
             {{ $slot }}
@@ -22,7 +22,7 @@
         @elseif (in_array(request()->route()->getName(),['sign-in', 'login'],))
             @if ($tipoUsuario === 'user')
                 @include('layouts.navbars.guest.login')
-            @elseif ($tipoUsuario === 'admin')
+            @elseif ($tipoUsuario === 'cor' || $tipoUsuario === 'dir')
                 @include('layouts.navbars.guest.login')
             @endif         
             {{ $slot }}
@@ -32,7 +32,7 @@
             <div class="main-content position-relative bg-gray-100">
                 @if ($tipoUsuario === 'user')
                     @include('layouts.navbars.auth.nav-profile')
-                @elseif ($tipoUsuario === 'admin')
+                @elseif ($tipoUsuario === 'cor' || $tipoUsuario === 'dir')
                     @include('layouts.navbars.auth.nav-profile')
                 @endif 
                 
@@ -45,8 +45,10 @@
         @else
             @if ($tipoUsuario === 'user')
                 @include('layouts.navbars.auth.sidebar')
-            @elseif ($tipoUsuario === 'admin')
-                @include('layouts.navbars.auth.sidebar-admin')
+            @elseif ($tipoUsuario === 'cor')
+                @include('layouts.navbars.auth.sidebar-cor')
+            @elseif ($tipoUsuario === 'dir')
+                @include('layouts.navbars.auth.sidebar-dir')
             @endif          
             @include('layouts.navbars.auth.nav')  
             @include('components.plugins.fixed-plugin')

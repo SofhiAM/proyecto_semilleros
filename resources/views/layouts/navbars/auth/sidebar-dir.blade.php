@@ -74,14 +74,24 @@
                     <span class="nav-link-text ms-1">Perfil</span>
                 </a>
             </li>
+            <li class="nav-item pb-2">
+                <a class="nav-link {{ Route::currentRouteName() == 'user-management' ? 'active' : '' }}"
+                    href="{{ route('user-management') }}">
+                    <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center
+                        {{ in_array(request()->route()->getName(),['user-management']) ? 'text-white' : 'text-dark' }}"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Gestion de Usuarios</span>
+                </a>
+            </li>
 
             <li class="nav-item mt-2">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Opciones</h6>
             </li>
-
             <li class="nav-item">
-                <a class="nav-link {{ Route::currentRouteName() == 'miSemillero' ? 'active' : '' }}"
-                    href="{{ route('miSemillero','1001') }}">
+                <a class="nav-link {{ Route::currentRouteName() == 'semillero' ? 'active' : '' }}"
+                    href="{{ route('semillero') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1"
@@ -104,7 +114,7 @@
                             </g>
                         </svg>
                     </div>
-                    <span class="nav-link-text ms-1">Mi semillero</span>
+                    <span class="nav-link-text ms-1">Semilleros</span>
                 </a>
             </li>
             <!-- ETIQUETA DE EVENTOS -->
