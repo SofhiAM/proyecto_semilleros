@@ -49,7 +49,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/ver-eventos', 'App\Http\Controllers\Eventos@index')->name('ver-eventos');
     Route::get('/registro-eventos', 'App\Http\Controllers\Eventos@form_eventos')->name('reg-eventos');
     Route::post('/eventos/registrar', 'App\Http\Controllers\Eventos@registrar');
-    
+    Route::get('/eventos/eliminar/{id}', 'App\Http\Controllers\Eventos@eliminar')->name('eli-eventos');
+
     Route::get('/profile', Profile::class)->name('profile');
     Route::get('/tables', Tables::class)->name('tables');
     Route::get('/static-sign-in', StaticSignIn::class)->name('sign-in');

@@ -39,4 +39,10 @@ class Eventos extends Controller
         return redirect()->route('ver-eventos');
 
     }
+
+    public function eliminar ($id){
+        $evento = Evento::findOrFail($id);
+        $evento->delete();
+        return redirect()->route('ver-eventos');
+    }
 }
