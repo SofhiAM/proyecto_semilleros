@@ -5,9 +5,10 @@ use App\Models\User;
 
 use Livewire\Component;
 
-class UserProfile extends Component
+class UserEdit extends Component
 {
     public User $user;
+    public $userId;
     public $showSuccesNotification  = false;
 
     public $showDemoNotification = false;
@@ -19,8 +20,8 @@ class UserProfile extends Component
         'user.ced' => 'max:15'
     ];
 
-    public function mount() { 
-        $this->user = auth()->user();
+    public function mount($userId) { 
+        $this->user = User::findOrFail($userId); // Carga los datos del usuario con el ID correspondiente
     }
 
     public function save() {
@@ -30,10 +31,13 @@ class UserProfile extends Component
             $this->validate();
             $this->user->save();
             $this->showSuccesNotification = true;
+
+            return redirect('/laravel-user-management');
         }
     }
+    
     public function render()
     {
-        return view('livewire.laravel-examples.user-profile');
+        return view('livewire.laravel-examples.user-edit');
     }
 }

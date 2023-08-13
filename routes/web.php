@@ -14,12 +14,19 @@ use App\Http\Livewire\Tables;
 use App\Http\Livewire\StaticSignIn;
 use App\Http\Livewire\StaticSignUp;
 use App\Http\Livewire\Rtl;
+use App\Http\Semilleros\SemilleroCon;
+use App\Http\Semilleros\RegistroCon;
+use App\Http\Semilleros\MiSemilleroCon;
+use App\Http\Semilleros\EncabezadoSemCon;
+use App\Http\Semilleros\SemilleristasCon;
 
 use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
+use App\Http\Livewire\LaravelExamples\UserEdit;
 
 use Illuminate\Http\Request;
 
+use App\Http\Controllers\Eventos;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,13 +52,29 @@ Route::get('/reset-password/{id}',ResetPassword::class)->name('reset-password')-
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
     Route::get('/billing', Billing::class)->name('billing');
+    // ------------------------------------------------------------------------------------
+    Route::get('/ver-eventos', 'App\Http\Controllers\Eventos@index')->name('ver-eventos');
+    Route::get('/registro-eventos', 'App\Http\Controllers\Eventos@form_eventos')->name('reg-eventos');
+    Route::post('/eventos/registrar', 'App\Http\Controllers\Eventos@registrar');
+    Route::get('/eventos/eliminar/{id}', 'App\Http\Controllers\Eventos@eliminar')->name('eli-eventos');
+
     Route::get('/proyectos', Proyectos::class)->name('proyectos');
     Route::get('/profile', Profile::class)->name('profile');
+
+    Route::get('/semillero', [SemilleroCon::class, 'render'])->name('semillero');
+    Route::get('/miSemillero/{id}', [MiSemilleroCon::class,'render'])->name('miSemillero');
+    Route::get('/semilleristas/{id}', [SemilleristasCon::class,'render'])->name('semilleristas');
+    Route::get('/registrarsemillero', RegistroCon::class)->name('registroSem');
+    Route::post('/registrarsemillero',[RegistroCon::class, 'registrar']);
+    Route::get('/semillero/eliminar{id}',[SemilleroCon::class, 'eliminar'])->name('eliminaSem');
+    // Route::put('/semilleristas/{id}', [MiSemilleroCon::class, 'editar'])->name('miSemillero');
+    
     Route::get('/tables', Tables::class)->name('tables');
     Route::get('/static-sign-in', StaticSignIn::class)->name('sign-in');
     Route::get('/static-sign-up', StaticSignUp::class)->name('static-sign-up');
     Route::get('/rtl', Rtl::class)->name('rtl');
     Route::get('/laravel-user-profile', UserProfile::class)->name('user-profile');
     Route::get('/laravel-user-management', UserManagement::class)->name('user-management');
+    Route::get('/laravel-user-edit/{userId}', UserEdit::class)->name('user-edit');
 });
 
