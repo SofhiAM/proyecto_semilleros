@@ -9,7 +9,6 @@ use App\Models\Evento;
 
 class Eventos extends Controller
 {
-    public $showSuccesNotification  = false;
 
     public function index(){
         $eventos = DB::table('evento')->get();
@@ -23,7 +22,7 @@ class Eventos extends Controller
     public function registrar(Request $r){
         $evento = new Evento();
 
-        $evento->id_evento = id();
+        $evento->id_evento = $r->input('id_evento');
         $evento->nom_evento = $r->input('nom_evento');
         $evento->descrip_evento = $r->input('descrip_evento');
         $evento->fecinicio_evento = $r->input('fecini_evento');
@@ -37,7 +36,7 @@ class Eventos extends Controller
         $showSuccesNotification  = true;
         $evento->save();
 
-        return redirect()->route('reg-eventos');
+        return redirect()->route('ver-eventos');
 
     }
 }

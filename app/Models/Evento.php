@@ -9,6 +9,6 @@ class Evento extends Model
 {
     protected $table = 'evento';
     protected $primaryKey = 'id_evento';
-    public $timestamps = true;
+    public $timestamps = false;
 
 }

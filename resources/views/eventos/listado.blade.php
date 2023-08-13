@@ -13,7 +13,6 @@
                     </div>
                     </div>
                 </div>
-
                 <!-- Ciclo de listado de cards de eventos -->
                 
                     <div class="card-body pt-4 p-3">
@@ -45,7 +44,7 @@
                                     <span class="mb-2 text-md" style="font-size: 90%;">Modalidad: <span class="text-dark ms-sm-2 font-weight-bold">{{$e->modalidad_evento}}</span></span>
                                     <span class="mb-2 text-md" style="font-size: 90%;">Tipo: <span class="text-dark ms-sm-2 font-weight-bold">{{$e->tipo_evento}}</span></span>
                                     <span class="mb-2 text-md" style="font-size: 90%;">Clasificación: <span class="text-dark ms-sm-2 font-weight-bold">{{$e->clasific_evento}}</span></span>
-                                    <span class="text-md" style="font-size: 90%;">Observaciones: <span class="text-dark ms-sm-2 font-weight-bold">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste voluptatibus, ex culpa tempora libero iure omnis unde maiores! Laborum facilis cumque at dignissimos nobis cum repudiandae eos! Sed, enim sint.</span></span>
+                                    <span class="text-md" style="font-size: 90%;">Observaciones: <span class="text-dark ms-sm-2 font-weight-bold">{{$e->observ_evento}}</span></span>
                                 </div>
                         </div>
                         </ul>
