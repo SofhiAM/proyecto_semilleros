@@ -19,7 +19,7 @@
                 <div class="col-auto my-auto">
                     <div class="h-100">
                         <h5 class="mb-1">
-                            {{ $user['nombre'] }}
+                            {{ $user['name'] }}
                         </h5>
                         <p class="mb-0 font-weight-bold text-sm">
                             {{ $user['tipo'] }}
@@ -62,44 +62,44 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="user-nombre" class="form-control-label">{{ __('Nombre') }}</label>
+                                <label for="user-name" class="form-control-label">{{ __('Nombre') }}</label>
                                 <div class="@error('user.name')border border-danger rounded-3 @enderror">
-                                    <input wire:model="user.nombre" class="form-control" type="text" placeholder="Nombre"
-                                        id="user-nombre">
+                                    <input wire:model="user.name" class="form-control" type="text" placeholder="Name"
+                                        id="user-name">
                                 </div>
-                                @error('user.nombre') <div class="text-danger">{{ $message }}</div> @enderror
+                                @error('user.name') <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="user-correo" class="form-control-label">{{ __('Correo') }}</label>
+                                <label for="user-email" class="form-control-label">{{ __('Correo') }}</label>
                                 <div class="@error('user.email')border border-danger rounded-3 @enderror">
-                                    <input wire:model="user.correo" class="form-control" type="email"
-                                        placeholder="@example.com" id="user-correo">
+                                    <input wire:model="user.email" class="form-control" type="email"
+                                        placeholder="@example.com" id="user-email">
                                 </div>
-                                @error('user.correo') <div class="text-danger">{{ $message }}</div> @enderror
+                                @error('user.email') <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="user.celular" class="form-control-label">{{ __('Celular') }}</label>
+                                <label for="user.phone" class="form-control-label">{{ __('Telefono') }}</label>
                                 <div class="@error('user.phone')border border-danger rounded-3 @enderror">
-                                    <input wire:model="user.celular" class="form-control" type="tel"
-                                        placeholder="0000000000" id="user-celular">
+                                    <input wire:model="user.phone" class="form-control" type="tel"
+                                        placeholder="40770888444" id="phone">
                                 </div>
-                                @error('user.celular') <div class="text-danger">{{ $message }}</div> @enderror
+                                @error('user.phone') <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="user.cedula" class="form-control-label">{{ __('Cedula') }}</label>
-                                <div class="@error('user.ced') border border-danger rounded-3 @enderror">
-                                    <input wire:model="user.cedula" class="form-control" type="text"
-                                        placeholder="Cedula" id="use-cedula">
+                                <label for="user.ced" class="form-control-label">{{ __('Cedula') }}</label>
+                                <div class="@error('user.location') border border-danger rounded-3 @enderror">
+                                    <input wire:model="user.ced" class="form-control" type="text"
+                                        placeholder="Cedula" id="name">
                                 </div>
-                                @error('user.cedula') <div class="text-danger">{{ $message }}</div> @enderror
+                                @error('user.ced') <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                         </div>
                     </div>

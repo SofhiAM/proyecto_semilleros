@@ -17,7 +17,12 @@
         @elseif (in_array(request()->route()->getName(),['profile', 'my-profile'],))
             @include('layouts.navbars.auth.sidebar')
             <div class="main-content position-relative bg-gray-100">
-                @include('layouts.navbars.auth.nav-profile')
+                @if ($tipoUsuario === 'Estudiante' || $tipoUsuario === 'Docente')
+                    @include('layouts.navbars.auth.nav-profile')
+                @elseif ($tipoUsuario === 'Coordinador' || $tipoUsuario === 'Director')
+                    @include('layouts.navbars.auth.nav-profile')
+                @endif 
+                
                 <div>
                     {{ $slot }}
                     @include('layouts.footers.auth.footer')
@@ -25,7 +30,7 @@
             </div>
             
         @else
-            @if ($tipoUsuario === 'Estudiante' || $tipoUsuario === 'Docente)
+            @if ($tipoUsuario === 'Estudiante' || $tipoUsuario === 'Docente')
                 @include('layouts.navbars.auth.sidebar')
             @elseif ($tipoUsuario === 'Coordinador')
                 @include('layouts.navbars.auth.sidebar-cor')

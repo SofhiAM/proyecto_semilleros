@@ -10,21 +10,21 @@
                         <div class="card-body">
                             <form wire:submit.prevent="login" action="#" method="POST" role="form text-left">
                                 <div class="mb-3">
-                                    <label for="correo">{{ __('Correo') }}</label>
+                                    <label for="email">{{ __('Correo') }}</label>
                                     <div class="@error('email')border border-danger rounded-3 @enderror">
-                                        <input wire:model="correo" id="correo" type="email" class="form-control"
-                                            placeholder="Correo" aria-label="Email" aria-describedby="email-addon">
+                                        <input wire:model="email" id="email" type="email" class="form-control"
+                                            placeholder="Email" aria-label="Email" aria-describedby="email-addon">
                                     </div>
-                                    @error('correo') <div class="text-danger">{{ $message }}</div> @enderror
+                                    @error('email') <div class="text-danger">{{ $message }}</div> @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="contraseña">{{ __('Contraseña') }}</label>
+                                    <label for="password">{{ __('Contraseña') }}</label>
                                     <div class="@error('password')border border-danger rounded-3 @enderror">
-                                        <input wire:model="contraseña" id="contraseña" type="password" class="form-control"
-                                            placeholder="Contraseña" aria-label="Password"
+                                        <input wire:model="password" id="password" type="password" class="form-control"
+                                            placeholder="Password" aria-label="Password"
                                             aria-describedby="password-addon">
                                     </div>
-                                    @error('contraseña') <div class="text-danger">{{ $message }}</div> @enderror
+                                    @error('password') <div class="text-danger">{{ $message }}</div> @enderror
                                 </div>
                                 <div class="form-check form-switch">
                                     <input wire:model="remember_me" class="form-check-input" type="checkbox"

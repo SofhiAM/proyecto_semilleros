@@ -25,8 +25,7 @@ class UserManagement extends Component
             // Actualizar la lista de usuarios después de la eliminación
             $this->users = User::paginate(10);
         }
-    }
-    
+    }    
     public function render()
     {
         return view('livewire.laravel-examples.user-management', [

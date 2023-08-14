@@ -17,36 +17,36 @@
                     <div class="card-body">
                         <form wire:submit.prevent="save" action="#" method="POST" role="form text-left">
                             <div class="mb-3">
-                                <label for="user-nombre" class="form-control-label">{{ __('Nombre') }}</label>
+                                <label for="user-name" class="form-control-label">{{ __('Nombre') }}</label>
                                 <div class="@error('user.name')border border-danger rounded-3 @enderror">
-                                    <input wire:model="user.nombre" class="form-control" type="text" placeholder="Nombre"
-                                        id="user-nombre">
+                                    <input wire:model="user.name" class="form-control" type="text" placeholder="Name"
+                                        id="user-name">
                                 </div>
-                                @error('user.nombre') <div class="text-danger">{{ $message }}</div> @enderror
+                                @error('user.name') <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                             <div class="mb-3">
-                                <label for="user.cedula" class="form-control-label">{{ __('Cedula') }}</label>
+                                <label for="user.ced" class="form-control-label">{{ __('Cedula') }}</label>
                                 <div class="@error('user.ced') border border-danger rounded-3 @enderror">
-                                    <input wire:model="user.cedula" class="form-control" type="text"
-                                        placeholder="Cedula" id="use-cedula">
+                                    <input wire:model="user.ced" class="form-control" type="text"
+                                        placeholder="Cedula" id="name">
                                 </div>
-                                @error('user.cedula') <div class="text-danger">{{ $message }}</div> @enderror
+                                @error('user.ced') <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                             <div class="mb-3">
-                                <label for="user-correo" class="form-control-label">{{ __('Correo') }}</label>
+                                <label for="user-email" class="form-control-label">{{ __('Correo') }}</label>
                                 <div class="@error('user.email')border border-danger rounded-3 @enderror">
-                                    <input wire:model="user.correo" class="form-control" type="email"
-                                        placeholder="@example.com" id="user-correo">
+                                    <input wire:model="user.email" class="form-control" type="email"
+                                        placeholder="@example.com" id="user-email">
                                 </div>
-                                @error('user.correo') <div class="text-danger">{{ $message }}</div> @enderror
+                                @error('user.email') <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                             <div class="mb-3">
-                                <label for="user.celular" class="form-control-label">{{ __('Celular') }}</label>
+                                <label for="user.phone" class="form-control-label">{{ __('Telefono') }}</label>
                                 <div class="@error('user.phone')border border-danger rounded-3 @enderror">
-                                    <input wire:model="user.celular" class="form-control" type="tel"
-                                        placeholder="0000000000" id="user-celular">
+                                    <input wire:model="user.phone" class="form-control" type="tel"
+                                        placeholder="40770888444" id="phone">
                                 </div>
-                                @error('user.celular') <div class="text-danger">{{ $message }}</div> @enderror
+                                @error('user.phone') <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Guardar</button>

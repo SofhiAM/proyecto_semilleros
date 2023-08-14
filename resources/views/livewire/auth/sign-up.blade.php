@@ -19,39 +19,39 @@
                             <div class="mb-3">
                                 <label>{{ __('Nombre') }}</label>
                                 <div class="@error('name') border border-danger rounded-3  @enderror">
-                                    <input wire:model="nombre" type="text" class="form-control" placeholder="Nombre"
+                                    <input wire:model="name" type="text" class="form-control" placeholder="Name"
                                         aria-label="Name" aria-describedby="email-addon">
                                 </div>
-                                @error('nombre') <div class="text-danger">{{ $message }}</div> @enderror
+                                @error('name') <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                             <div class="mb-3">
                                 <label>{{ __('Cedula') }}</label>
-                                <div class="@error('cedula') border border-danger rounded-3  @enderror">
-                                    <input wire:model="cedula" type="text" class="form-control" placeholder="Cedula"
-                                        aria-label="Name" aria-describedby="email-addon">
+                                <div class="@error('ced') border border-danger rounded-3  @enderror">
+                                    <input wire:model="ced" type="text" class="form-control" placeholder="Cedula"
+                                        aria-label="ced" aria-describedby="email-addon">
                                 </div>
-                                @error('cedula') <div class="text-danger">{{ $message }}</div> @enderror
+                                @error('ced') <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                             <div class="mb-3">
                                 <label>{{ __('Correo') }}</label>
                                 <div class="@error('email') border border-danger rounded-3 @enderror">
-                                    <input wire:model="correo" type="email" class="form-control" placeholder="Correo"
+                                    <input wire:model="email" type="email" class="form-control" placeholder="Email"
                                         aria-label="Email" aria-describedby="email-addon">
                                 </div>
-                                @error('correo') <div class="text-danger">{{ $message }}</div> @enderror
+                                @error('email') <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                             <div class="mb-3">
                                 <label>{{ __('Contraseña') }}</label>
                                 <div class="@error('password') border border-danger rounded-3 @enderror">
-                                    <input wire:model="contraseña" type="password" class="form-control"
-                                        placeholder="Contraseña" aria-label="Password"
+                                    <input wire:model="password" type="password" class="form-control"
+                                        placeholder="Password" aria-label="Password"
                                         aria-describedby="password-addon">
                                 </div>
-                                @error('contraseña') <div class="text-danger">{{ $message }}</div> @enderror
+                                @error('password') <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="tipo">{{ __('Tipo de Usuario') }}</label>
-                                <div class="@error('email') border border-danger rounded-3 @enderror">
+                                <div class="@error('password') border border-danger rounded-3 @enderror">
                                     <select wire:model="tipo" class="form-control" id="userType">
                                         <option value="">Seleccione</option>
                                         <option value="Estudiante">Estudiante</option>
