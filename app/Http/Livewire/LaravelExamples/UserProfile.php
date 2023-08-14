@@ -13,10 +13,10 @@ class UserProfile extends Component
     public $showDemoNotification = false;
     
     protected $rules = [
-        'user.name' => 'max:40|min:3',
-        'user.email' => 'email:rfc,dns',
-        'user.phone' => 'max:10',
-        'user.ced' => 'max:15'
+        'user.nombre' => 'max:40|min:3',
+        'user.correo' => 'email:rfc,dns',
+        'user.celular' => 'max:10',
+        'user.cedula' => 'max:15'
     ];
 
     public function mount() { 

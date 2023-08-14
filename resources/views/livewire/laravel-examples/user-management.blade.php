@@ -19,19 +19,19 @@
                                         ID
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Name
+                                        Nombre
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Cedula
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Email
+                                        Correo
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Tipo
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Action
+                                        Acciones
                                     </th>
                                 </tr>
                             </thead>
@@ -42,13 +42,13 @@
                                             <p class="text-xs font-weight-bold mb-0">{{ $user->id }}</p>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-xs font-weight-bold mb-0">{{ $user->name }}</p>
+                                            <p class="text-xs font-weight-bold mb-0">{{ $user->nombre }}</p>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-xs font-weight-bold mb-0">{{ $user->ced }}</p>
+                                            <p class="text-xs font-weight-bold mb-0">{{ $user->cedula }}</p>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-xs font-weight-bold mb-0">{{ $user->email }}</p>
+                                            <p class="text-xs font-weight-bold mb-0">{{ $user->correo }}</p>
                                         </td>
                                         <td class="text-center">
                                             <p class="text-xs font-weight-bold mb-0">{{ $user->tipo }}</p>
