@@ -54,9 +54,10 @@
                                 <div class="@error('password') border border-danger rounded-3 @enderror">
                                     <select wire:model="tipo" class="form-control" id="userType">
                                         <option value="">Seleccione</option>
-                                        <option value="user">Regular</option>                                  
-                                        <option value="cor">Coordinador</option>
-                                        <option value="dir">Director</option>
+                                        <option value="Estudiante">Estudiante</option>
+                                        <option value="Docente">Docente</option>                                  
+                                        <option value="Coordinador">Coordinador</option>
+                                        <option value="Director">Director</option>
                                     </select>
                                 </div>
                                 @error('tipo') <div class="text-danger">{{ $message }}</div> @enderror

@@ -9,5 +9,5 @@ class SemilleristasMod extends Model
 {
     protected $table = 'semillerista';
     protected $primaryKey = 'cod_semillerista';
-    public $timestamps = true;
+    public $timestamps = false;
 }

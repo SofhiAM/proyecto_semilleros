@@ -9,5 +9,5 @@ class CoordinadorMod extends Model
 {
     protected $table = 'coordinador';
     protected $primaryKey = 'id_coordinador';
-    public $timestamps = true;
+    public $timestamps = false;
 }
