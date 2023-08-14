@@ -17,6 +17,12 @@ use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
 use App\Http\Livewire\LaravelExamples\UserEdit;
 
+use App\Http\Semilleros\SemilleroCon;
+use App\Http\Semilleros\RegistroCon;
+use App\Http\Semilleros\MiSemilleroCon;
+use App\Http\Semilleros\EncabezadoSemCon;
+use App\Http\Semilleros\SemilleristasCon;
+
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Eventos;
