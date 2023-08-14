@@ -13,12 +13,6 @@ use App\Http\Livewire\Tables;
 use App\Http\Livewire\StaticSignIn;
 use App\Http\Livewire\StaticSignUp;
 use App\Http\Livewire\Rtl;
-use App\Http\Semilleros\SemilleroCon;
-use App\Http\Semilleros\RegistroCon;
-use App\Http\Semilleros\MiSemilleroCon;
-use App\Http\Semilleros\EncabezadoSemCon;
-use App\Http\Semilleros\SemilleristasCon;
-
 use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
 use App\Http\Livewire\LaravelExamples\UserEdit;
