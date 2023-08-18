@@ -17,12 +17,12 @@ class UsersSeeder extends Seeder
     {
         $datos=[
             [
-                'name' => 'Luis Obeymar Estrada',
-                'email' => 'luisobeynar@udenar.edu.co',
-                'password'=>'123456',
+                'name' => 'Sandra',
+                'email' => 'sandra@udenar.edu.co',
+                'password'=> hash::make('123456'),
                 'phone' => '3216088642',
-                'ced' =>'2345643',
-                'tipo' => 'Director'
+                'ced' =>'2987654',
+                'tipo' => 'Coordinador'
             ]
         ];
         DB::table('users')->insert($datos); 
