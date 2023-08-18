@@ -7,6 +7,7 @@
                     <div class="row">
                         <div class="col-6 d-flex align-items-center">
                             <h4 class="mb-0">Listado de Eventos</h4>
+                            <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="{{route('rep-eventos')}}" style="font-size: 90%;"><i class="far fa-trash-alt me-2"></i>Generar Reporte</a>
                         </div>
                     </div>
                 </div>

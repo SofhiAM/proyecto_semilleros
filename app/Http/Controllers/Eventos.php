@@ -45,4 +45,9 @@ class Eventos extends Controller
         $evento->delete();
         return redirect()->route('ver-eventos');
     }
+
+    public function reporte (){
+        $pdf = \PDF::loadView('reportes.rep_eventos');
+        return $pdf->download('reporte_eventos.pdf');
+    }
 }
