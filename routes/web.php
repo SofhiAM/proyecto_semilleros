@@ -60,12 +60,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', Profile::class)->name('profile');
 
     Route::get('/semillero', [SemilleroCon::class, 'render'])->name('semillero');
-    Route::get('/miSemillero/{id}', [MiSemilleroCon::class,'render'])->name('miSemillero');
+    Route::get('/miSemillero', [MiSemilleroCon::class,'render'])->name('miSemillero');
+    Route::get('/miSemillero/{id}', [MiSemilleroCon::class,'ver'])->name('verSemillero');
     Route::get('/semilleristas/{id}', [SemilleristasCon::class,'render'])->name('semilleristas');
     Route::get('/registrarsemillero', RegistroCon::class)->name('registroSem');
     Route::post('/registrarsemillero',[RegistroCon::class, 'registrar']);
     Route::get('/semillero/eliminar{id}',[SemilleroCon::class, 'eliminar'])->name('eliminaSem');
-    // Route::put('/semilleristas/{id}', [MiSemilleroCon::class, 'editar'])->name('miSemillero');
     
     Route::get('/tables', Tables::class)->name('tables');
     Route::get('/static-sign-in', StaticSignIn::class)->name('sign-in');
