@@ -52,7 +52,7 @@
                         class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
                         <span class="alert-icon text-white"><i class="ni ni-like-2"></i></span>
                         <span
-                            class="alert-text text-white">{{ __('Tus  datos se han guardado correctamente!') }}</span>
+                            class="alert-text text-white">{{ __('Tus datos se han guardado correctamente!') }}</span>
                         <button wire:click="$set('showSuccesNotification', false)" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                         </button>
                     </div>

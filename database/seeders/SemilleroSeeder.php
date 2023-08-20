@@ -37,3 +37,6 @@ class SemilleroSeeder extends Seeder
         
     }   
 }
+
+
+
