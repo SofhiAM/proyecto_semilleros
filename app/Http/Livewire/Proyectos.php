@@ -5,6 +5,8 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\SemilleroMod;
 use App\Models\Proyecto;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Proyectos extends Component
 {
