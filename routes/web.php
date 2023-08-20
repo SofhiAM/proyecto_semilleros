@@ -10,6 +10,7 @@ use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\Billing;
 use App\Http\Livewire\Profile;
 use App\Http\Livewire\Proyectos;
+use App\Http\Livewire\VerProyectos;
 use App\Http\Livewire\Tables;
 use App\Http\Livewire\StaticSignIn;
 use App\Http\Livewire\StaticSignUp;
@@ -59,6 +60,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/eventos/eliminar/{id}', 'App\Http\Controllers\Eventos@eliminar')->name('eli-eventos');
 
     Route::get('/proyectos', Proyectos::class)->name('proyectos');
+    Route::post('/registrarp',[Proyectos::class, 'registrar']);
+    Route::get('/ver-proyectos', VerProyectos::class)->name('ver-proyectos');
     Route::get('/profile', Profile::class)->name('profile');
 
     Route::get('/semillero', [SemilleroCon::class, 'render'])->name('semillero');
