@@ -55,7 +55,7 @@
                                         <div class="ms-auto justify-content-center">
                                             <a class="btn btn-link text-success text-gradient px-3 mb-0" href="{{route('verSemillero',$s->id_semillero)}}" data-target="#encabezadoSem{{ $s->id_semillero}}><i class="far fa-view-alt me-2"></i>Ver</a>
                                             <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="{{route('eliminaSem',$s->id_semillero)}}"><i class="far fa-trash-alt me-2"></i>Eliminar</a>
-                                            <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Editar</a>
+                                            <a class="btn btn-link text-dark px-3 mb-0" href="{{route('editarSem',$s->id_semillero)}}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Editar</a>
                                         </div>
                                     </div>
                                 </div>

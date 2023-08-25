@@ -21,11 +21,12 @@ use App\Http\Semilleros\SemilleroCon;
 use App\Http\Semilleros\RegistroCon;
 use App\Http\Semilleros\MiSemilleroCon;
 use App\Http\Semilleros\EncabezadoSemCon;
-use App\Http\Semilleros\SemilleristasCon;
+// use App\Http\Semilleros\SemilleristasCon;
 
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Eventos;
+use App\Http\Controllers\SemilleristasCon;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,14 +59,20 @@ Route::middleware('auth')->group(function () {
     Route::get('/eventos/eliminar/{id}', 'App\Http\Controllers\Eventos@eliminar')->name('eli-eventos');
 
     Route::get('/profile', Profile::class)->name('profile');
-
+    // rutas vistas semillero usuario Director
     Route::get('/semillero', [SemilleroCon::class, 'render'])->name('semillero');
-    Route::get('/miSemillero', [MiSemilleroCon::class,'render'])->name('miSemillero');
+    Route::get('/semillero/eliminar{id}',[SemilleroCon::class, 'eliminar'])->name('eliminaSem');
+    Route::get('/semillero/editar{id}',[SemilleroCon::class, 'editarform'])->name('editarSem');
+    Route::post('editar{id}',[SemilleroCon::class, 'editar'])->name('actualizaSem');
     Route::get('/miSemillero/{id}', [MiSemilleroCon::class,'ver'])->name('verSemillero');
-    Route::get('/semilleristas/{id}', [SemilleristasCon::class,'render'])->name('semilleristas');
     Route::get('/registrarsemillero', RegistroCon::class)->name('registroSem');
     Route::post('/registrarsemillero',[RegistroCon::class, 'registrar']);
-    Route::get('/semillero/eliminar{id}',[SemilleroCon::class, 'eliminar'])->name('eliminaSem');
+
+    // Rutas vistas semillero usuario Coordinador - Estudiante - Docente
+    Route::get('/miSemillero', [MiSemilleroCon::class,'render'])->name('miSemillero');
+    Route::get('semilleristas/{id}', 'App\Http\Controllers\SemilleristasCon@render')->name('semilleristas');
+    Route::get('/misemillero/agregarsemilleristas', 'App\Http\Controllers\SemilleristasCon@vincular')->name('agregarSemitas');
+    Route::post('/misemillero/agregarsemilleristas', 'App\Http\Controllers\SemilleristasCon@registrar');
     
     Route::get('/tables', Tables::class)->name('tables');
     Route::get('/static-sign-in', StaticSignIn::class)->name('sign-in');

@@ -123,7 +123,7 @@
                     <h5 class="mb-0">Información Semilleristas</h5>
                 </div>
                 <div class="col-auto align-items-end">
-                    <a class="btn bg-success text-white" href="javascript:;"><i class="fas fa-plus"></i>&nbsp;&nbsp;Vincular Semillerista</a>
+                    <a class="btn bg-success text-white" href="{{route('agregarSemitas')}}"><i class="fas fa-plus"></i>&nbsp;&nbsp;Vincular Semillerista</a>
                 </div>
             </div>
         <div class="card-body px-0 pt-0 pb-2">
@@ -156,11 +156,16 @@
                                     <p class="text-xs font-weight-bold mb-0">{{$s->prog_semillerista}}</p>
                                 </td>
                                 <td class="align-middle text-center text-sm">
-                                    <span class="badge badge-sm bg-gradient-success">{{$s->estado_semillerista}}</span>
+                                    @if($s->estado_semillerista==='Activo')
+                                        <span class="badge badge-sm bg-gradient-success">{{$s->estado_semillerista}}</span>
+                                    @elseif($s->estado_semillerista==='Inactivo')
+                                        <span class="badge badge-sm bg-gradient-danger">{{$s->estado_semillerista}}</span>
+                                    @endif
                                 </td>
                                 <td class="align-middle text-center">
-                                    <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Eliminar</a>
-                                    <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Editar</a>
+                                    <a class="btn btn-link text-success px-2 mb-0" href="javascript:;"></i>Credenciales</a>
+                                    <a class="btn btn-link text-dark px-2 mb-0" href="javascript:;"></i>Editar</a>
+                                    <a class="btn btn-link text-danger text-gradient px-2 mb-0" href="javascript:;"></i>Desvincular</a>
                                 </td>
                             </tr>
                         @endforeach
