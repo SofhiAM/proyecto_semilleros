@@ -163,9 +163,9 @@
                                     @endif
                                 </td>
                                 <td class="align-middle text-center">
-                                    <a class="btn btn-link text-success px-2 mb-0" href="javascript:;"></i>Credenciales</a>
+                                    <a class="btn btn-link text-success px-2 mb-0" href="{{route('credencialesSemitas',$s->id_semillerista)}}"></i>Credenciales</a>
                                     <a class="btn btn-link text-dark px-2 mb-0" href="javascript:;"></i>Editar</a>
-                                    <a class="btn btn-link text-danger text-gradient px-2 mb-0" href="javascript:;"></i>Desvincular</a>
+                                    <a class="btn btn-link text-danger text-gradient px-2 mb-0" href="{{route('desvincularform',$s->id_semillerista)}}"></i>Desvincular</a>
                                 </td>
                             </tr>
                         @endforeach

@@ -73,6 +73,10 @@ Route::middleware('auth')->group(function () {
     Route::get('semilleristas/{id}', 'App\Http\Controllers\SemilleristasCon@render')->name('semilleristas');
     Route::get('/misemillero/agregarsemilleristas', 'App\Http\Controllers\SemilleristasCon@vincular')->name('agregarSemitas');
     Route::post('/misemillero/agregarsemilleristas', 'App\Http\Controllers\SemilleristasCon@registrar');
+    Route::get('/credencialessemilleristas/{id}', 'App\Http\Controllers\SemilleristasCon@credenciales')->name('credencialesSemitas');
+    Route::post('/credencialessemilleristas/{id}', 'App\Http\Controllers\SemilleristasCon@registro_credenciales')->name('crearusuario');
+    Route::get('/desvincularsemilleristas/{id}', 'App\Http\Controllers\SemilleristasCon@desvincularform')->name('desvincularform');
+    Route::post('/desvincularsemilleristas/{id}', 'App\Http\Controllers\SemilleristasCon@desvincular')->name('desvincular');
     
     Route::get('/tables', Tables::class)->name('tables');
     Route::get('/static-sign-in', StaticSignIn::class)->name('sign-in');

@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\SemilleroMod;
 use App\Models\SemilleristasMod;
+use App\Models\userMod;
+use Illuminate\Support\Facades\Hash;
+
+use App\Models\User;
 
 class SemilleristasCon extends Controller
 {
@@ -53,5 +57,42 @@ class SemilleristasCon extends Controller
         $semillerista->save();
 
         return redirect()->route('semilleristas',$id);
+    }
+
+    public function credenciales($id)
+    {    
+        $semillerista = SemilleristasMod::findOrFail($id);
+        return view('Semilleros.sign-up',['s'=>$semillerista]);
+    }
+
+    public function registro_credenciales(Request $r ,$id) {
+        $semillerista = SemilleristasMod::findOrFail($id);
+        $id_sem = DB::table('semillerista')->value('id_semillero',$id);
+        $name=DB::table('semillerista')->where('id_semillerista',$id)->value('nom_semillerista');
+        $email=DB::table('semillerista')->where('id_semillerista',$id)->value('correo_semillerista');
+        
+        $user = new User();
+        $user->name = $name;
+        $user->ced= $id;
+        $user-> email=$email;
+        $user ->password= Hash::make($r->password);
+        $user->tipo='Estudiante';
+        $user->save();
+        return redirect()->route('semilleristas',$id_sem);
+    }
+
+    public function desvincularform($id)
+    {    
+        $semillerista = SemilleristasMod::findOrFail($id);
+        return view('Semilleros.desvincularSemita',['s'=>$semillerista]);
+    }
+
+    public function desvincular(Request $r,$id)
+    {    
+        $semillerista = SemilleristasMod::findOrFail($id);
+        $id_sem = DB::table('semillerista')->value('id_semillero',$id);
+        $semillerista->estado_semillerista = $r->input('estado');
+        $semillerista->save();
+        return redirect()->route('semilleristas',$id_sem);
     }
 }
