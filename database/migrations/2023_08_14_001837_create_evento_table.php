@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('tipo_evento');
             $table->string('modalidad_evento');
             $table->string('clasific_evento');
-            $table->text('observ_evento');
+            $table->text('observ_evento')->null();;
 
             $table->primary('id_evento');
         });
