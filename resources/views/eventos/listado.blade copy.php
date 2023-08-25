@@ -24,29 +24,11 @@
                         @foreach ($eventos as $e)
                         <ul class="list-group">
                         <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
-                            <div class="col-1">
-                                <!-- Fecha lateral -->
-                                @php
-                                    $fecha = $e->fecinicio_evento;
-                                    $fech = strtotime($fecha);
-
-                                    $dia = date("j", $fech);
-                                    $mes = date("n", $fech);
-
-                                    $meses = ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"];
-                                    $mesn = (int)$mes;
-                                @endphp
-
-                                <div class="row">
-                                    <h2>{{ $dia }}</h2>
-                                </div>
-                                <div class="row">
-                                    <h5>{{ $meses[$mesn - 1] }}</h5>
-                                </div>
-                            </div>
-                            <div class="col-8 d-flex flex-column">
-                                <h5 class="mb-3 text-lg" >{{$e->nom_evento}}</h5>
-                                <span class="mb-2 text-md" style="font-size: 90%;">Descripción: <span class="text-dark font-weight-bold ms-sm-2">{{$e->descrip_evento}}</span></span>
+                            <div class="d-flex flex-column">
+                                <h6 class="mb-3 text-lg">{{$e->nom_evento}}</h6>
+                                <span class="mb-2 text-md" style="font-size: 90%;">Fecha de Inicio: <span class="text-dark font-weight-bold ms-sm-2">{{$e->fecinicio_evento}}</span></span>
+                                <span class="mb-2 text-md" style="font-size: 90%;">Fecha de Fin: <span class="text-dark ms-sm-2 font-weight-bold">{{$e->fecfin_evento}}</span></span>
+                                <span class="text-md" style="font-size: 90%;">Lugar: <span class="text-dark ms-sm-2 font-weight-bold">{{$e->lugar_evento}}</span></span>
                             </div>
                             
                             <div class="ms-auto text-end">
