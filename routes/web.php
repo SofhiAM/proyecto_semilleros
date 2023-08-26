@@ -52,7 +52,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/editar-eventos/{id}', 'App\Http\Controllers\Eventos@form_editar')->name('editar-eventos');
     Route::post('/eventos/editar/{id}', 'App\Http\Controllers\Eventos@editar');
     Route::get('/ver-mas/{id}', 'App\Http\Controllers\Eventos@vermas')->name('vermas-eventos');
-    Route::get('/participar-evento', 'App\Http\Controllers\Eventos@participar')->name('partic-eventos');
+    Route::get('/participar-evento/{id}', 'App\Http\Controllers\Eventos@participar')->name('partic-eventos');
 
     Route::get('/eventos/gen_reporte', 'App\Http\Controllers\Eventos@reporte')->name('rep-eventos');
 

@@ -30,7 +30,9 @@
 
                 <div class="form-group">
                     <label class="form-control-label" style="font-size: 14px;">Evento al que se inscribe</label>
-                    <input type="text" class="form-control" id="nom_evento" name="nom_evento" disabled>
+                    <select class="form-control" id="nom_ev" name="nom_ev" disabled>
+                        <option value="{{$evento->id_evento}}">{{$evento->nom_evento}}</option>
+                    </select>
                 </div>
 
                 <div class="d-flex justify-content-end">

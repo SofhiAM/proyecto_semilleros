@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="col-3 text-end my-2">
-                        <a class="btn bg-gradient-dark mb-0" href="{{route('partic-eventos')}}"><i class="fas fa-plus"></i>&nbsp;&nbsp;Participar</a>
+                        <a class="btn bg-gradient-dark mb-0" href="{{route('partic-eventos', $evento->id_evento)}}"><i class="fas fa-plus"></i>&nbsp;&nbsp;Participar</a>
                 </div>
             </div>
         </div>
