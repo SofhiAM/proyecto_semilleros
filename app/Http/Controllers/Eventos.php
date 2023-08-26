@@ -70,4 +70,9 @@ class Eventos extends Controller
         $pdf = \PDF::loadView('reportes.rep_eventos');
         return $pdf->download('reporte_eventos.pdf');
     }
+
+    public function vermas ($id){
+        $evento = Evento::findOrFail($id);
+        return view ('eventos.vermas-ev', ['evento'=>$evento]);
+    }
 }

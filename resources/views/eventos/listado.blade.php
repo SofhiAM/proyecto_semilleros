@@ -17,10 +17,6 @@
                 <!-- Ciclo de listado de cards de eventos -->
                 
                     <div class="card-body pt-4 p-3">
-                    @php
-                    $contador = 0;
-                    @endphp
-
                         @foreach ($eventos as $e)
                         <ul class="list-group">
                         <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
@@ -52,24 +48,10 @@
                             <div class="ms-auto text-end">
                                 <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="{{route('eli-eventos', $e->id_evento)}}" style="font-size: 90%;"><i class="far fa-trash-alt me-2"></i>Borrar</a>
                                 <a class="btn btn-link text-dark px-3 mb-0" href="{{route('editar-eventos', $e->id_evento)}}" style="font-size: 90%;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Editar</a><br>
-                                <a class="btn bg-gradient-info px-3 mb-0 btn-lg w-100" href="#">Ver más</a>
+                                <a class="btn bg-gradient-info px-3 mb-0 btn-lg w-100" href="{{route('vermas-eventos', $e->id_evento)}}">Ver más</a>
                             </div><br>
                         </li>
-                        <div class="collapse" id="collapseExample{{$contador}}">
-                                <div class="card card-body">
-                                    <span class="mb-2 text-md" style="font-size: 90%;">Descripción: <span class="text-dark font-weight-bold ms-sm-2">{{$e->descrip_evento}}</span></span>
-                                    <span class="mb-2 text-md" style="font-size: 90%;">Modalidad: <span class="text-dark ms-sm-2 font-weight-bold">{{$e->modalidad_evento}}</span></span>
-                                    <span class="mb-2 text-md" style="font-size: 90%;">Tipo: <span class="text-dark ms-sm-2 font-weight-bold">{{$e->tipo_evento}}</span></span>
-                                    <span class="mb-2 text-md" style="font-size: 90%;">Clasificación: <span class="text-dark ms-sm-2 font-weight-bold">{{$e->clasific_evento}}</span></span>
-                                    <span class="text-md" style="font-size: 90%;">Observaciones: <span class="text-dark ms-sm-2 font-weight-bold">{{$e->observ_evento}}</span></span>
-                                </div>
-                        </div>
                         </ul>
-
-                        @php
-                            $contador = $contador+1;
-                        @endphp
-
                         @endforeach
                     </div>
                 
