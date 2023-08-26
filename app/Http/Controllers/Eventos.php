@@ -73,6 +73,10 @@ class Eventos extends Controller
 
     public function vermas ($id){
         $evento = Evento::findOrFail($id);
-        return view ('eventos.vermas-ev', ['evento'=>$evento]);
+        return view ('eventos.vermas-evcoor', ['evento'=>$evento]);
+    }
+
+    public function participar (){
+        return view ('eventos.participar-ev');
     }
 }

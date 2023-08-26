@@ -3,7 +3,7 @@
         <!-- Encabezado -->
         <div class="card card-body blur shadow-blur mx-2 mt-n6">
             <div class="row gx-4">
-                <div class="col-auto my-auto">
+                <div class="card-header pb-0 p-3 col-9">
                     <div class="h-100">
                         <h5 class="mb-1 mx-3">
                             {{$evento->nom_evento}}
@@ -12,6 +12,9 @@
                             {{$evento->tipo_evento}}
                         </p>
                     </div>
+                </div>
+                <div class="col-3 text-end my-2">
+                        <a class="btn bg-gradient-dark mb-0" href="{{route('partic-eventos')}}"><i class="fas fa-plus"></i>&nbsp;&nbsp;Participar</a>
                 </div>
             </div>
         </div>
@@ -60,6 +63,7 @@
                                     </p>
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="col-md-12">
                                     <h6 class="mb-0">
