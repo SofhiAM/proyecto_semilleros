@@ -7,9 +7,9 @@
                     <div class="row">
                     <div class="col-6 d-flex align-items-center">
                         <h4 class="mb-0">Listado de Eventos</h4>
-                        <br><a class="btn btn-link text-success text-gradient px-3 mb-0" href="{{route('rep-eventos')}}" style="font-size: 90%;"><i class="far fa-collection me-2"></i>Generar Reporte</a>
                     </div>
                     <div class="col-6 text-end">
+                    <a class="btn btn-link text-success text-gradient px-3 mb-0" href="{{route('rep-eventos')}}" style="font-size: 90%;"><i class="far fa-collection me-2"></i>Generar Reporte</a>
                         <a class="btn bg-gradient-dark mb-0" href='/registro-eventos'><i class="fas fa-plus"></i>&nbsp;&nbsp;Añadir Evento</a>
                     </div>
                     </div>
@@ -51,7 +51,7 @@
                             
                             <div class="ms-auto text-end">
                                 <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="{{route('eli-eventos', $e->id_evento)}}" style="font-size: 90%;"><i class="far fa-trash-alt me-2"></i>Borrar</a>
-                                <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;" style="font-size: 90%;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Editar</a><br>
+                                <a class="btn btn-link text-dark px-3 mb-0" href="{{route('editar-eventos', $e->id_evento)}}" style="font-size: 90%;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Editar</a><br>
                                 <a class="btn bg-gradient-info px-3 mb-0 btn-lg w-100" href="#">Ver más</a>
                             </div><br>
                         </li>

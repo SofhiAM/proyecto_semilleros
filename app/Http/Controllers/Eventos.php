@@ -22,7 +22,6 @@ class Eventos extends Controller
     public function registrar(Request $r){
         $evento = new Evento();
 
-        $evento->id_evento = $r->input('id_evento');
         $evento->nom_evento = $r->input('nom_evento');
         $evento->descrip_evento = $r->input('descrip_evento');
         $evento->fecinicio_evento = $r->input('fecini_evento');
@@ -33,17 +32,20 @@ class Eventos extends Controller
         $evento->clasific_evento = $r->input('clasif_evento');
         $evento->observ_evento = $r->input('obser_evento');
 
-        $showSuccesNotification  = true;
         $evento->save();
 
         return redirect()->route('ver-eventos');
-
     }
 
     public function eliminar ($id){
         $evento = Evento::findOrFail($id);
         $evento->delete();
         return redirect()->route('ver-eventos');
+    }
+
+    public function form_editar ($id){
+        $evento = Evento::findOrFail($id);
+        return view ('eventos.editar-ev', ['evento'=>$evento]);
     }
 
     public function reporte (){
