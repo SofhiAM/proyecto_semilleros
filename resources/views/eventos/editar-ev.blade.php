@@ -6,7 +6,7 @@
         </div>
         
         <div class="card-body pt-4 p-3">
-            <form action="{{url('/eventos/registrar')}}" method="post">
+            <form action="{{url('/eventos/editar', $evento->id_evento)}}" method="post">
                 @csrf
                 <div class="row">
                     <div class="form-group">
@@ -19,7 +19,7 @@
                     <div class="col-sm-12 col-md-12">
                         <div class="form-group">
                             <label class="form-control-label" style="font-size: 14px;">Descrpción del evento</label>
-                            <textarea class="form-control" id="descrip_evento" name="descrip_evento" rows="3" placeholder="¿De qué trata el evento?" value='{{$evento->descrip_evento}}' require></textarea>
+                            <textarea class="form-control" id="descrip_evento" name="descrip_evento" rows="3" placeholder="¿De qué trata el evento?" require>{{$evento->descrip_evento}}</textarea>
                         </div>
                     </div>
                 </div>
@@ -28,14 +28,14 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
                             <label class="form-control-label" style="font-size: 14px;">Fecha de Inicio</label>
-                            <input class="form-control" type="date" value='{{$evento->fecini_evento}}' id="fecini_evento" name="fecini_evento" require>
+                            <input class="form-control" type="date"  value="{{ $evento->fecinicio_evento }}" id="fecini_evento" name="fecini_evento" require>
                         </div>
                     </div>
 
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
                             <label class="form-control-label" style="font-size: 14px;">Fecha de Finalización</label>
-                            <input class="form-control" type="date" value='{{$evento->fecifin_evento}}' id="fecfin_evento" name="fecfin_evento" require>
+                            <input class="form-control" type="date" value="{{ $evento->fecfin_evento }}"  id="fecfin_evento" name="fecfin_evento" require>
                         </div>
                     </div>
                 </div>                
@@ -77,10 +77,10 @@
                         <div class="form-group">
                             <label class="form-control-label" style="font-size: 14px;">Clasificación</label>
                             <select class="form-control" id="clasif_evento" name="clasif_evento" require>
-                                <option value="Local" @if($evento->clasif_evento === 'Local') selected @endif>Local</option>
-                                <option value="Regional" @if($evento->clasif_evento === 'Regional') selected @endif>Regional</option>
-                                <option value="Nacional" @if($evento->clasif_evento === 'Nacional') selected @endif>Nacional</option>
-                                <option value="Internacional" @if($evento->clasif_evento === 'Internacional') selected @endif>Internacional</option>
+                                <option value="Local" @if($evento->clasific_evento === 'Local') selected @endif>Local</option>
+                                <option value="Regional" @if($evento->clasific_evento === 'Regional') selected @endif>Regional</option>
+                                <option value="Nacional" @if($evento->clasific_evento === 'Nacional') selected @endif>Nacional</option>
+                                <option value="Internacional" @if($evento->clasific_evento === 'Internacional') selected @endif>Internacional</option>
                             </select>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
                     <div class="col-sm-12 col-md-12">
                         <div class="form-group">
                             <label class="form-control-label" style="font-size: 14px;">Observaciones</label>
-                            <textarea class="form-control" id="obser_evento" name="obser_evento" rows="3" placeholder="¿Algo más que decir?" value='{{$evento->obser_evento}}'></textarea>
+                            <textarea class="form-control" id="obser_evento" name="obser_evento" rows="3" placeholder="¿Algo más que decir?">{{$evento->observ_evento}}</textarea>
                         </div>
                     </div>
                 </div>
