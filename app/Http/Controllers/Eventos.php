@@ -15,6 +15,11 @@ class Eventos extends Controller
         return view ('eventos.listado', ['eventos' => $eventos]);
     }
 
+    public function eventos_coor(){
+        $eventos = DB::table('evento')->get();
+        return view ('eventos.listado-vistacoor', ['eventos' => $eventos]);
+    }
+
     public function form_eventos(){
         return view('eventos.registrar-ev');
     }
