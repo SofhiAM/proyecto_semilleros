@@ -123,7 +123,7 @@
                     <h5 class="mb-0">Información Semilleristas</h5>
                 </div>
                 <div class="col-auto align-items-end">
-                    <a class="btn bg-success text-white" href="{{route('agregarSemitas')}}"><i class="fas fa-plus"></i>&nbsp;&nbsp;Vincular Semillerista</a>
+                    <a class="btn bg-success text-white" href="{{route('agregarSemitas')}}"><i class="fas fa-plus"></i>&nbsp;&nbsp;Registrar Semillerista</a>
                 </div>
             </div>
         <div class="card-body px-0 pt-0 pb-2">
@@ -164,8 +164,11 @@
                                 </td>
                                 <td class="align-middle text-center">
                                     <a class="btn btn-link text-success px-2 mb-0" href="{{route('credencialesSemitas',$s->id_semillerista)}}"></i>Credenciales</a>
-                                    <a class="btn btn-link text-dark px-2 mb-0" href="javascript:;"></i>Editar</a>
-                                    <a class="btn btn-link text-danger text-gradient px-2 mb-0" href="{{route('desvincularform',$s->id_semillerista)}}"></i>Desvincular</a>
+                                    @if($s->estado_semillerista==='Activo')
+                                        <a class="btn btn-link text-danger text-gradient px-2 mb-0" href="{{route('desvincularform',$s->id_semillerista)}}"></i>Desvincular</a>
+                                    @elseif($s->estado_semillerista==='Inactivo')
+                                    <a class="btn btn-link text-danger text-gradient px-2 mb-0" href="{{route('desvincularform',$s->id_semillerista)}}"></i>Vincular</a>    
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach
