@@ -13,19 +13,29 @@
                         <div class="form-group">
                             <label class="form-control-label" style="font-size: 14px;">Seleccione el proyecto con el que desea participar</label>
                             <select class="form-control" id="proyecto_particip" name="proyecto_particip" require>
-                                <option value="id">P1</option>
+                                @foreach($semillero as $s)
+                                <option value="{{$s->id_semillero}}">{{$s->nom_semillero}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" style="font-size: 14px;">Nombre del semillero</label>
-                    <input type="text" class="form-control" id="nom_semillero" name="nom_semillero" disabled>
+                    <select class="form-select" id="barrio" name="barrio">
+                            @foreach($semillero as $s)
+                            <option value="{{$s->id_semillero}}">{{$s->nom_semillero}}</option>
+                            @endforeach
+                    </select>
                 </div>
 
                 <div class="form-group">
                     <label class="form-control-label" style="font-size: 14px;">Coordinador - Encargado</label>
-                    <input type="text" class="form-control" id="nom_coor" name="nom_coor" disabled>
+                    <select class="form-select" id="barrio" name="barrio">
+                            @foreach($coordinador as $c)
+                            <option value="{{$c->id_coordinador}}">{{$c->nom_coordinador}}</option>
+                            @endforeach
+                    </select>
                 </div>
 
                 <div class="form-group">

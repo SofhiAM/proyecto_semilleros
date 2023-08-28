@@ -82,7 +82,9 @@ class Eventos extends Controller
     }
 
     public function participar ($id){
+        $semillero = DB::table('semillero')->get();
+        $coordinador = DB::table('coordinador')->get();
         $evento = Evento::findOrFail($id);
-        return view ('eventos.participar-ev', ['evento'=>$evento]);
+        return view ('eventos.participar-ev', ['semillero'=>$semillero, 'coordinador'=>$coordinador, 'evento'=>$evento]);
     }
 }
