@@ -6,15 +6,15 @@
         </div>
         
         <div class="card-body pt-4 p-3">
-            <form action="{{url('#')}}" method="post">
+            <form action="{{url('/eventos/participar')}}" method="post">
                 @csrf
                 <div class="row">
                     <div class="col-sm-12 col-md-12">
                         <div class="form-group">
                             <label class="form-control-label" style="font-size: 14px;">Seleccione el proyecto con el que desea participar</label>
                             <select class="form-control" id="proyecto_particip" name="proyecto_particip" require>
-                                @foreach($semillero as $s)
-                                <option value="{{$s->id_semillero}}">{{$s->nom_semillero}}</option>
+                                @foreach($proyecto as $p)
+                                    <option value="{{$p->id_proyecto}}">{{$p->titulo_proyecto}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" style="font-size: 14px;">Nombre del semillero</label>
-                    <select class="form-select" id="barrio" name="barrio">
+                    <select class="form-select" id="nom_sem" name="nom_sem">
                             @foreach($semillero as $s)
                             <option value="{{$s->id_semillero}}">{{$s->nom_semillero}}</option>
                             @endforeach
@@ -31,7 +31,7 @@
 
                 <div class="form-group">
                     <label class="form-control-label" style="font-size: 14px;">Coordinador - Encargado</label>
-                    <select class="form-select" id="barrio" name="barrio">
+                    <select class="form-select" id="nom_coor" name="nom_coor">
                             @foreach($coordinador as $c)
                             <option value="{{$c->id_coordinador}}">{{$c->nom_coordinador}}</option>
                             @endforeach

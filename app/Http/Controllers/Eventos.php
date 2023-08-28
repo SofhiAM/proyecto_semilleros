@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\Evento;
+use App\Models\Proyecto;
+use App\Models\Participante;
 
 class Eventos extends Controller
 {
@@ -84,7 +86,19 @@ class Eventos extends Controller
     public function participar ($id){
         $semillero = DB::table('semillero')->get();
         $coordinador = DB::table('coordinador')->get();
+        $proyecto = DB::table('proyecto')->get();
         $evento = Evento::findOrFail($id);
-        return view ('eventos.participar-ev', ['semillero'=>$semillero, 'coordinador'=>$coordinador, 'evento'=>$evento]);
+        return view ('eventos.participar-ev', ['proyecto'=>$proyecto,'semillero'=>$semillero, 'coordinador'=>$coordinador, 'evento'=>$evento]);
+    }
+
+    public function reg_participacion(Request $r){
+        $participante = new Participante();
+
+        $participante->id_proyecto = $r->input('proyecto_particip');
+        $participante->id_evento = $r->input('nom_ev');
+
+        $participante->save();
+
+        return redirect()->route('ver-eventos');
     }
 }

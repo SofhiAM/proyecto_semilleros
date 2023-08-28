@@ -63,7 +63,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/eventos/editar/{id}', 'App\Http\Controllers\Eventos@editar');
     Route::get('/ver-mas/{id}', 'App\Http\Controllers\Eventos@vermas')->name('vermas-eventos');
     Route::get('/participar-evento/{id}', 'App\Http\Controllers\Eventos@participar')->name('partic-eventos');
-
+    Route::post('/eventos/participar', 'App\Http\Controllers\Eventos@reg_participacion');
     Route::get('/eventos/gen_reporte', 'App\Http\Controllers\Eventos@reporte')->name('rep-eventos');
 
     Route::get('/proyectos', Proyectos::class)->name('proyectos');
