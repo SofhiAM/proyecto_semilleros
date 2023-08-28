@@ -167,7 +167,7 @@
                                     @if($s->estado_semillerista==='Activo')
                                         <a class="btn btn-link text-danger text-gradient px-2 mb-0" href="{{route('desvincularform',$s->id_semillerista)}}"></i>Desvincular</a>
                                     @elseif($s->estado_semillerista==='Inactivo')
-                                    <a class="btn btn-link text-danger text-gradient px-2 mb-0" href="{{route('desvincularform',$s->id_semillerista)}}"></i>Vincular</a>    
+                                        <a class="btn btn-link text-danger text-gradient px-2 mb-0" href="{{route('desvincularform',$s->id_semillerista)}}"></i>Vincular</a>    
                                     @endif
                                 </td>
                             </tr>
