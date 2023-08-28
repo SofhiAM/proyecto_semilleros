@@ -6,6 +6,7 @@ use Livewire\Component;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\SemilleroMod;
+use App\Models\SemilleristasMod;
 
 class RegistroCon extends Component
 {
@@ -38,4 +39,5 @@ class RegistroCon extends Component
         return redirect()->route('semillero');
     }
 
+    
 }
