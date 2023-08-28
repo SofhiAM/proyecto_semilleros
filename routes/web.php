@@ -9,6 +9,8 @@ use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\Billing;
 use App\Http\Livewire\Profile;
+use App\Http\Livewire\Proyectos;
+use App\Http\Livewire\VerProyectos;
 use App\Http\Livewire\Tables;
 use App\Http\Livewire\StaticSignIn;
 use App\Http\Livewire\StaticSignUp;
@@ -64,6 +66,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/eventos/gen_reporte', 'App\Http\Controllers\Eventos@reporte')->name('rep-eventos');
 
+    Route::get('/proyectos', Proyectos::class)->name('proyectos');
+    Route::post('/registrarp',[Proyectos::class, 'registrar']);
+    Route::get('/ver-proyectos', VerProyectos::class)->name('ver-proyectos');
     Route::get('/profile', Profile::class)->name('profile');
 
     Route::get('/semillero', [SemilleroCon::class, 'render'])->name('semillero');
